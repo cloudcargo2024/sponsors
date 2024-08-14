@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            CloudCargo
+        </title>
+    </head>
+    <body>
+        <link rel="stylesheet" href="C:\Users\user\Desktop\projects\web page\design.css">
+        <h2>
+        <button class="btn">
+            <span class="icon">
+                <svg viewBox="0 0 175 80" width="40" height="40">
+                    <rect width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                    <rect y="30" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                    <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
+                </svg>
+            </span>
+            <span class="text">CloudCargo</span>                
+        </button>
+        <div class="panel">
+            <p>-</p>
+            <p><a href="C:\Users\user\Desktop\projects\web page\pagina web.html">Main page</a></p>
+            <p><a href="C:\Users\user\Desktop\projects\web page\login.html">Login</a></p>
+            <p><a href="C:\Users\user\Desktop\projects\web page\login.html">Products</a></p>
+            <p><a href="C:\Users\user\Desktop\projects\web page\sponsors.html">Sponsors</a></p>
+            <p><a href="C:\Users\user\Desktop\projects\web page\contactus.html">Contact us</a></p>
+        </div>
+
+        <script>
+            var acc = document.getElementsByClassName("btn");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+                });
+            }
+        </script>
+        </h2>
+        <h1><br>Hi</br></h1>
+    </body>
+</html>
