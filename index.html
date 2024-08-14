@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>
-            CloudCargo
-        </title>
-    </head>
-    <body>
-        <link rel="stylesheet" href="design.css">
-        <h2>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CloudCargo</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <h2>
         <button class="btn">
             <span class="icon">
                 <svg viewBox="0 0 175 80" width="40" height="40">
@@ -16,34 +16,30 @@
                     <rect y="60" width="80" height="15" fill="#f0f0f0" rx="10"></rect>
                 </svg>
             </span>
-            <span class="text">CloudCargo</span>                
+            <span class="text">CloudCargo</span>
         </button>
-        <div class="panel">
-            <p>-</p>
-            <p><a href="https://cloudcargo2024.github.io/web/">Main page</a></p>
-            <p><a href="https://cloudcargo2024.github.io/login/">Login</a></p>
-            <p><a href="https://cloudcargo2024.github.io/products/">Products</a></p>
-            <p><a href="https://cloudcargo2024.github.io/sponsors/">Sponsors</a></p>
-            <p><a href="https://cloudcargo2024.github.io/contactus/">Contact us</a></p>
-        </div>
+    </h2>
 
-        <script>
-            var acc = document.getElementsByClassName("btn");
-            var i;
+    <div class="panel">
+        <p>-</p>
+        <p><a href="https://cloudcargo2024.github.io/login/">Login</a></p>
+        <p><a href="https://cloudcargo2024.github.io/products/">Products</a></p>
+        <p><a href="https://cloudcargo2024.github.io/sponsors/">Sponsors</a></p>
+        <p><a href="https://cloudcargo2024.github.io/contactus/">Contact us</a></p>
+    </div>
 
-            for (i = 0; i < acc.length; i++) {
-                acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                    panel.style.maxHeight = null;
-                } else {
-                    panel.style.maxHeight = panel.scrollHeight + "px";
-                } 
-                });
+    <script>
+        var btn = document.querySelector('.btn');
+        var panel = document.querySelector('.panel');
+
+        btn.addEventListener('click', function() {
+            this.classList.toggle("active");
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
             }
-        </script>
-        </h2>
-        <h1><br>sponsors</br></h1>
-    </body>
+        });
+    </script>
+</body>
 </html>
