@@ -1,65 +1,179 @@
-/* Button Styles */
 .btn {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70px;
-    border: none;
-    margin: 0;
-    transition: all 0.5s ease-in-out;
-    font-size: 30px;
-    font-family: Verdana, Tahoma, sans-serif;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    background: #201E43;
-    color: #f5f5f5;
-    cursor: pointer;
-    outline: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh; /* Height relative to viewport height */
+  border: none;
+  margin: 0;
+  transition: all 0.5s ease-in-out;
+  font-size: 2rem; /* Responsive font size */
+  font-family: Verdana, Tahoma, sans-serif;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  background: #201E43;
+  color: #f5f5f5;
+  cursor: pointer;
+  outline: none;
+  z-index: 6; /* Above social icons */
 }
 
 .btn:hover {
-    box-shadow: 0 0 20px 0px #201E43;
+  box-shadow: 0 0 20px 0px #201E43;
 }
 
-/* Icon inside Button */
 .btn .icon {
-    position: absolute;
-    width: 70px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.5s;
+  position: absolute;
+  width: 10vw; /* Width relative to viewport width */
+  height: 4vh; /* Height relative to viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  z-index: 6;
 }
 
 .btn:hover .icon {
-    width: 175px;
+  width: 25vw; /* Responsive width on hover */
 }
 
-/* Text inside Button */
 .btn .text {
-    transform: translateX(100px);
-    transition: all 0.5s;
+  transform: translateX(10vw); /* Responsive translation */
+  transition: all 0.5s;
 }
 
 .btn:hover .text {
-    opacity: 0;
+  opacity: 0;
 }
 
-/* Button Active State */
 .btn:active .icon {
-    transform: scale(0.85);
+  transform: scale(0.85);
 }
 
-/* Panel Styles */
 .panel {
-    padding: 0 18px;
-    background-color: #201E43;
-    color: white;
-    font-family: Verdana, Tahoma, sans-serif;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+  padding: 1rem; /* Responsive padding */
+  background-color: #201E43;
+  color: white;
+  font-family: Verdana, Tahoma, sans-serif;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  position: fixed;
+  top: 5vh; /* Below the button bar */
+  left: 0;
+  right: 0; /* Full width of the screen minus margins */
+  width: calc(100% - 2rem); /* Adjust for margin */
+  margin: 0 1rem; /* Equal margin on both sides */
+  z-index: 4;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+}
+
+/* Background Image for Body */
+body {
+  background-image: url('4k-mountain-514o15v7mw0ycwpg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* Container for social media icons and text */
+.social-container {
+  position: fixed;
+  bottom: 20vh; /* Adjust as needed, responsive to viewport height */
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 3;
+}
+
+.social-text {
+  color: white;
+  font-size: 4rem; /* Responsive font size */
+  text-align: center;
+  margin-bottom: 2rem; /* Responsive margin */
+  z-index: 4;
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem; /* Responsive gap */
+  z-index: 2;
+}
+
+.social-icons a {
+  width: 10vw; /* Responsive circle size */
+  height: 10vw; /* Responsive circle size */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem; /* Responsive icon size */
+  text-decoration: none;
+  color: white;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Background Colors for Social Media Icons */
+.fa-facebook {
+  background-color: #3B5998;
+}
+
+.fa-google {
+  background-color: #e54545;
+}
+
+.fa-linkedin {
+  background-color: #007bb5;
+}
+
+.fa-instagram {
+  background-color: #E4405F;
+}
+
+.social-icons a:hover {
+  opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+  .btn {
+      font-size: 25px;
+      height: 60px;
+  }
+  .panel {
+      top: 1vh;
+  }
+  .social-text {
+      font-size: 30px;
+  }
+  .social-icons a {
+      width: 60px;
+      height: 60px;
+      font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+      font-size: 20px;
+      height: 50px;
+  }
+  .panel {
+      top: 2.1vh;
+  }
+  .social-text {
+      font-size: 25px;
+  }
+  .social-icons a {
+      width: 50px;
+      height: 50px;
+      font-size: 18px;
+  }
+  .social-container {
+      bottom: 80px;
+  }
 }
